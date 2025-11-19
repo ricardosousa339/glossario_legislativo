@@ -5,32 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Glossário de Termos Legislativos - 2ª Edição - Câmara dos Deputados e Senado Federal">
     <title>Glossário de Termos Legislativos - 2ª Ed.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Proza+Libre:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Glossário de Termos Legislativos</h1>
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <img src="https://al.to.leg.br/assets/img/logo.png" alt="Assembleia Legislativa do Tocantins" class="header-logo">
+                    </div>
+                    <div class="header-info">
+                        <div class="header-title">Assembleia Legislativa do Estado do Tocantins</div>
+                        <div class="header-subtitle">Glossário de Termos Legislativos</div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <nav class="main-nav">
+            <div class="container">
+                <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+                    <span>☰</span> Menu
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link" onclick="showSection('conceitos')" id="btn-conceitos">Glossário</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="showSection('siglas')" id="btn-siglas">Siglas e Abreviaturas</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="showSection('comissoes')" id="btn-comissoes">Comissões</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="showSection('partidos')" id="btn-partidos">Partidos Políticos</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="showSection('semelhancas')" id="btn-semelhancas">Termos Semelhantes</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="showSection('alfabetico')" id="btn-alfabetico">Índice Alfabético</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" onclick="showSection('hierarquico')" id="btn-hierarquico">Índice Hierárquico</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    
-    <nav>
-        <div class="nav-container">
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
-                <span>☰</span> Menu
-            </button>
-            <ul id="nav-menu">
-                <li><button onclick="showSection('siglas')" id="btn-siglas">Lista de Siglas</button></li>
-                <li><button onclick="showSection('conceitos')" id="btn-conceitos" class="active">Glossário</button></li>
-                <li><button onclick="showSection('comissoes')" id="btn-comissoes">Comissões</button></li>
-                <li><button onclick="showSection('partidos')" id="btn-partidos">Partidos</button></li>
-                <li><button onclick="showSection('semelhancas')" id="btn-semelhancas">Diferenças</button></li>
-                <li><button onclick="showSection('alfabetico')" id="btn-alfabetico">Índice A-Z</button></li>
-                <li><button onclick="showSection('hierarquico')" id="btn-hierarquico">Hierárquico</button></li>
-            </ul>
-        </div>
-    </nav>
     
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Voltar ao topo">
         ↑
@@ -44,7 +67,6 @@
 
         <section id="siglas" class="content-section">
             <h2>Lista de Siglas</h2>
-            <h2>Lista de Abreviaturas e Siglas</h2>
       <table>
          <tr>
             <td>Avante</td>
@@ -850,7 +872,6 @@
 
         <section id="conceitos" class="content-section active">
             <h2>Glossário de Termos Legislativos</h2>
-            <h1>Glossário de Termos Legislativos (2ª Edição)</h1>
       <p id="conceitos-27467255" class="entrada">
          <b>Abertura de Reunião</b> — Ato do presidente de comissão que dá início a uma reunião da comissão.</p>
       <ul class="fonteN">
@@ -7109,7 +7130,6 @@
 
         <section id="comissoes" class="content-section">
             <h2>Comissões Permanentes</h2>
-            <h1>Lista de Comissões Permanentes</h1>
       <p class="entradaver">
          <b>CAE</b> — <i>Ver</i>
          <a href="#comissoes-27428653">Comissão de Assuntos Econômicos (CAE) [SF]</a>
@@ -7714,7 +7734,6 @@ VI - opinar sobre recursos interpostos às decisões da Presidência.</p>
 
         <section id="partidos" class="content-section">
             <h2>Partidos Políticos</h2>
-            <h1>Lista de Partidos Políticos</h1>
       <p id="partidos-27429037" class="entrada">
          <b>Avante (Avante)</b> — Partido político criado em 11/10/1994. </p>
       <ul class="fonteN">
@@ -8339,7 +8358,6 @@ VI - opinar sobre recursos interpostos às decisões da Presidência.</p>
 
         <section id="semelhancas" class="content-section">
             <h2>Diferenças e Semelhanças Terminológicas</h2>
-            <h1>Lista de Diferenças e Semelhanças</h1>
       <h2>Terminologia Própria do Congresso Nacional</h2>
       <table border="1">
          <tr>
@@ -8792,8 +8810,7 @@ VI - opinar sobre recursos interpostos às decisões da Presidência.</p>
         </section>
 
         <section id="alfabetico" class="content-section">
-            <h2>Índice Alfabético</h2>
-            <h1>Índice Alfabético e Remissivo</h1>
+            <h2>Índice Alfabético e Remissivo</h2>
       <p>
          <a href="#conceitos-27467255">Abertura de Reunião</a>
       </p>
@@ -13551,9 +13568,21 @@ VI - opinar sobre recursos interpostos às decisões da Presidência.</p>
     </main>
     
     <footer>
-        <p><strong>Glossário de Termos Legislativos - 2ª Edição</strong></p>
-        <p>Câmara dos Deputados e Senado Federal</p>
-        <p>Brasília, Brasil</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://al.to.leg.br/assets/img/logo.png" alt="Assembleia Legislativa do Tocantins">
+            </div>
+            <div class="footer-info">
+                <p class="footer-title">Assembleia Legislativa do Estado do Tocantins</p>
+                <p>Palácio Deputado João D’Abreu - Praça dos Girassois</p>
+                <p>Palmas - TO | CEP: 77.001-902</p>
+                <p>Telefone: (63) 3212-5162</p>
+            </div>
+            <div class="footer-docs">
+                <p class="footer-subtitle">Glossário de Termos Legislativos - 2ª Edição</p>
+                <p>Base: Câmara dos Deputados e Senado Federal</p>
+            </div>
+        </div>
     </footer>
     
     <script src="script.js"></script>

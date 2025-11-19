@@ -21,172 +21,174 @@
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.7;
     color: var(--text-dark);
     background: linear-gradient(to bottom, #f7fafc 0%, #edf2f7 100%);
     min-height: 100vh;
 }
 
-/* Cabeçalho Elegante */
-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
-}
-
-header .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-header h1 {
-    font-family: 'Merriweather', Georgia, serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    letter-spacing: -0.5px;
-}
-
-header .subtitle {
-    text-align: center;
-    opacity: 0.95;
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-header .badge {
-    display: inline-block;
-    background: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-/* Navegação Moderna */
-nav {
-    background: var(--bg-white);
-    padding: 0;
-    box-shadow: var(--shadow-md);
+/* Cabeçalho inspirado na AL-TO */
+.main-header {
+    background: #1B3964;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
-    z-index: 999;
-    border-bottom: 3px solid var(--accent-color);
+    z-index: 1000;
 }
 
-nav .nav-container {
+.header-top {
+    background: #1B3964;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-top .container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 1rem;
+    gap: 2rem;
+}
+
+.logo-section {
+    flex-shrink: 0;
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    display: block;
+    /* A logo já é branca, não precisa de filtro */
+}
+
+.header-info {
+    flex: 1;
+    color: white;
+}
+
+.header-title {
+    font-family: 'Proza Libre', 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+}
+
+/* Navegação estilo AL-TO */
+.main-nav {
+    background: #1B3964;
+    padding: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.main-nav .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Botão hamburger (oculto por padrão) */
 .nav-toggle {
     display: none;
-    background: var(--primary-color);
+    background: rgba(255,255,255,0.1);
     color: white;
-    border: none;
-    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
-    padding: 0.75rem 1.5rem;
-    margin: 0;
-    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
     line-height: 1;
     transition: var(--transition);
 }
 
 .nav-toggle:hover {
-    background: var(--secondary-color);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
 }
 
 .nav-toggle span {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-right: 0.5rem;
 }
 
-nav ul {
+.nav-menu {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    gap: 0;
 }
 
-nav li {
+.nav-item {
     margin: 0;
+    position: relative;
 }
 
-nav button {
+.nav-link {
     display: block;
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.3rem;
     background: transparent;
-    color: var(--text-dark);
+    color: rgba(255,255,255,0.9);
     border: none;
     cursor: pointer;
-    transition: var(--transition);
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    position: relative;
+    transition: all 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    position: relative;
 }
 
-nav button::after {
+.nav-link::after {
     content: '';
     position: absolute;
-    bottom: -3px;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--accent-color);
+    background: #ffc107;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
-nav button:hover {
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--primary-color);
+.nav-link:hover {
+    background: transparent;
+    color: #ffc107;
 }
 
-nav button:hover::after {
+.nav-link:hover::after {
     transform: scaleX(1);
 }
 
-nav button.active {
-    background: rgba(30, 58, 95, 0.05);
-    color: var(--primary-color);
-    font-weight: 600;
+.nav-link.active,
+#btn-conceitos.active {
+    background: transparent;
+    color: #ffc107;
+    font-weight: 500;
 }
 
-nav button.active::after {
+.nav-link.active::after,
+#btn-conceitos.active::after {
     transform: scaleX(1);
 }
 
@@ -202,7 +204,7 @@ main {
 .alphabet-index {
     position: fixed;
     left: 1rem;
-    top: 330px;
+    top: 240px;
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
@@ -285,7 +287,7 @@ section.active {
 }
 
 section h2 {
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Proza Libre', Georgia, serif;
     color: var(--primary-color);
     font-size: 2rem;
     font-weight: 700;
@@ -507,27 +509,62 @@ ul.especie {
     text-align: center;
 }
 
-/* Rodapé Elegante */
+/* Rodapé estilo AL-TO */
 footer {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: #1B3964;
     color: white;
-    text-align: center;
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     margin-top: 4rem;
-    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+    border-top: 3px solid #ffc107;
 }
 
-footer p {
-    margin: 0.5rem 0;
-    font-size: 0.95rem;
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-logo img {
+    height: 70px;
+    width: auto;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.footer-info p {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.footer-title {
+    font-weight: 600;
+    font-size: 1rem !important;
+    margin-bottom: 0.8rem !important;
+    opacity: 1 !important;
+}
+
+.footer-docs {
+    text-align: right;
+}
+
+.footer-docs p {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
     opacity: 0.9;
 }
 
-footer strong {
+.footer-subtitle {
     font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5rem !important;
+    opacity: 1 !important;
 }
 
 /* Botão voltar ao topo */
@@ -571,23 +608,28 @@ footer strong {
     }
     
     /* Cabeçalho compacto */
-    header {
-        padding: 1rem;
+    .header-top {
+        padding: 0.8rem 0;
     }
     
-    header h1 {
-        font-size: 1.3rem;
-        margin-bottom: 0.25rem;
-        line-height: 1.3;
+    .header-top .container {
+        padding: 0 1rem;
     }
     
-    header .subtitle {
+    .header-content {
+        gap: 1rem;
+    }
+    
+    .header-logo {
+        height: 50px;
+    }
+    
+    .header-title {
+        font-size: 0.9rem;
+    }
+    
+    .header-subtitle {
         font-size: 0.8rem;
-        display: none;
-    }
-    
-    header .badge {
-        display: none;
     }
     
     /* Menu hambúrguer */
@@ -595,48 +637,53 @@ footer strong {
         display: block;
     }
     
-    nav {
-        padding: 0;
+    .main-nav .container {
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: stretch;
     }
     
-    nav .nav-container {
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-    }
-    
-    nav ul {
+    .nav-menu {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
+        background: #1B3964;
         flex-direction: column;
         width: 100%;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        box-shadow: var(--shadow-lg);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         z-index: 998;
+        gap: 0;
     }
     
-    nav ul.open {
+    .nav-menu.open {
         max-height: 500px;
         overflow-y: auto;
     }
     
-    nav li {
-        border-bottom: 1px solid var(--border-color);
+    .nav-item {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     
-    nav li:last-child {
+    .nav-item:last-child {
         border-bottom: none;
     }
     
-    nav button {
+    .nav-link {
         width: 100%;
         text-align: left;
         padding: 1rem 1.5rem;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        border-bottom: none !important;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(255, 255, 255, 0.15);
+        border-bottom: none !important;
     }
     
     main {
@@ -661,15 +708,44 @@ footer strong {
         width: 45px;
         height: 45px;
     }
+    
+    /* Rodapé responsivo */
+    footer {
+        padding: 2rem 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-logo img {
+        height: 60px;
+    }
+    
+    .footer-info,
+    .footer-docs {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
+    .header-logo {
+        height: 45px;
     }
     
-    header .subtitle {
+    .header-title {
         font-size: 0.85rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.75rem;
     }
     
     section {

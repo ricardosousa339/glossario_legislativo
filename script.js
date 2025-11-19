@@ -110,8 +110,9 @@ document.addEventListener('click', (e) => {
                         
                         // Aguardar animação e então fazer scroll para o elemento
                         setTimeout(() => {
-                            const navHeight = document.querySelector('nav').offsetHeight;
-                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 0;
+                            const header = document.querySelector('.main-header');
+                            const headerHeight = header ? header.offsetHeight : 0;
+                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
                             
                             window.scrollTo({ 
                                 top: targetPosition, 
@@ -244,8 +245,9 @@ function scrollToLetter(letter) {
     
     if (target) {
         // Calcular posição considerando altura da navbar
-        const navHeight = document.querySelector('nav').offsetHeight;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+        const header = document.querySelector('.main-header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
         
         window.scrollTo({ 
             top: targetPosition, 
