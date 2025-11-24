@@ -1,1 +1,7 @@
 epub_extracted/**
+*
+!*.html
+!*.css
+!*.js
+!images/
+!assets/
