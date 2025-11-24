@@ -1,7 +1,6 @@
 epub_extracted/**
-*
-!*.html
-!*.css
-!*.js
-!images/
-!assets/
+venv/**
+generate_html_old.py
+IMPLEMENTACAO.md
+generate_html.py.bak
+MELHORIAS.md

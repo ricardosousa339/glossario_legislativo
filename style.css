@@ -23,15 +23,12 @@
 html {
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
-    position: relative;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.7;
     color: var(--text-dark);
@@ -43,12 +40,12 @@ body {
 .main-header {
     background: #1B3964;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -676,18 +673,73 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    * {
-        max-width: 100vw;
-    }
-    
     html, body {
-        overflow-x: hidden !important;
         max-width: 100vw;
         width: 100%;
+        height: auto;
     }
     
+    body {
+        padding-top: 140px;
+    }
+    
+    .main-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+    }
+    
+    /* Índice alfabético adaptado para mobile - barra lateral direita */
     .alphabet-index {
+        display: flex !important;
+        position: fixed;
+        right: 0.25rem;
+        left: auto;
+        top: 160px;
+        flex-direction: column;
+        gap: 0.1rem;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 0.3rem 0.2rem;
+        border-radius: 12px 0 0 12px;
+        box-shadow: -2px 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(27, 57, 100, 0.1);
+        border-right: none;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+        z-index: 999;
+        scrollbar-width: none;
+    }
+    
+    .alphabet-index::-webkit-scrollbar {
         display: none;
+    }
+    
+    .alphabet-index.visible {
+        opacity: 1;
+    }
+    
+    .alphabet-index a {
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .alphabet-index a:hover,
+    .alphabet-index a:active {
+        background: #1B3964;
+        color: white;
+        transform: scale(1.2);
+    }
+    
+    .alphabet-index a.disabled {
+        opacity: 0.25;
     }
     
     /* Cabeçalho compacto */
@@ -742,6 +794,8 @@ footer {
     
     .main-nav {
         overflow-x: hidden;
+        position: relative;
+        overflow-y: visible;
     }
     
     .main-nav .container {
@@ -750,13 +804,12 @@ footer {
         align-items: stretch;
         width: calc(100% - 1.5rem);
         overflow-x: hidden;
+        position: relative;
+        overflow-y: visible;
     }
     
     .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        position: static;
         background: #1B3964;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -765,7 +818,6 @@ footer {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         z-index: 998;
         gap: 0;
     }
