@@ -92,7 +92,7 @@ document.addEventListener('click', (e) => {
             const targetId = href.substring(1);
             
             // Verificar se é um link para uma seção principal
-            const mainSections = ['siglas', 'conceitos', 'comissoes', 'partidos', 'semelhancas', 'alfabetico', 'hierarquico'];
+            const mainSections = ['siglas', 'conceitos', 'comissoes', 'partidos', 'alfabetico', 'hierarquico'];
             const isMainSection = mainSections.includes(targetId);
             
             if (isMainSection) {

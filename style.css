@@ -26,6 +26,7 @@ body {
     color: var(--text-dark);
     background: linear-gradient(to bottom, #f7fafc 0%, #edf2f7 100%);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Cabeçalho inspirado na AL-TO */
@@ -35,12 +36,77 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.header-top {
+    background: #1B3964;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-top .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-section {
+    flex-shrink: 0;
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+.header-info {
+    flex: 1;
+    color: white;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.header-title {
+    font-family: 'Proza Libre', 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Navegação estilo AL-TO */
 .main-nav {
     background: #1B3964;
     padding: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .main-nav .container {
@@ -556,15 +622,51 @@ footer {
         display: none;
     }
     
+    /* Cabeçalho compacto */
+    .header-top {
+        padding: 0.8rem 0;
+    }
+    
+    .header-top .container {
+        padding: 0 0.75rem;
+    }
+    
+    .header-content {
+        gap: 0.75rem;
+        max-width: 100%;
+    }
+    
+    .header-logo {
+        height: 50px;
+        max-width: 100px;
+    }
+    
+    .header-info {
+        min-width: 0;
+        flex: 1;
+    }
+    
+    .header-title {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+    
+    .header-subtitle {
+        font-size: 0.75rem;
+        word-break: break-word;
+    }
+    
     /* Menu hambúrguer */
     .nav-toggle {
         display: block;
     }
     
     .main-nav .container {
-        padding: 0 1rem;
+        padding: 0 0.75rem;
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
+        max-width: 100%;
     }
     
     .nav-menu {
@@ -660,6 +762,18 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .header-logo {
+        height: 45px;
+    }
+    
+    .header-title {
+        font-size: 0.85rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.75rem;
+    }
+    
     section {
         padding: 1.5rem 1rem;
         border-radius: 8px;
