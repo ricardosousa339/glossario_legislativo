@@ -37,61 +37,10 @@ body {
     z-index: 1000;
 }
 
-.header-top {
-    background: #1B3964;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.header-top .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.logo-section {
-    flex-shrink: 0;
-}
-
-.header-logo {
-    height: 70px;
-    width: auto;
-    display: block;
-    /* A logo já é branca, não precisa de filtro */
-}
-
-.header-info {
-    flex: 1;
-    color: white;
-}
-
-.header-title {
-    font-family: 'Proza Libre', 'Open Sans', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0 0 0.25rem 0;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
-}
-
-.header-subtitle {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
-    font-weight: 400;
-}
-
 /* Navegação estilo AL-TO */
 .main-nav {
     background: #1B3964;
     padding: 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .main-nav .container {
@@ -607,31 +556,6 @@ footer {
         display: none;
     }
     
-    /* Cabeçalho compacto */
-    .header-top {
-        padding: 0.8rem 0;
-    }
-    
-    .header-top .container {
-        padding: 0 1rem;
-    }
-    
-    .header-content {
-        gap: 1rem;
-    }
-    
-    .header-logo {
-        height: 50px;
-    }
-    
-    .header-title {
-        font-size: 0.9rem;
-    }
-    
-    .header-subtitle {
-        font-size: 0.8rem;
-    }
-    
     /* Menu hambúrguer */
     .nav-toggle {
         display: block;
@@ -736,18 +660,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .header-logo {
-        height: 45px;
-    }
-    
-    .header-title {
-        font-size: 0.85rem;
-    }
-    
-    .header-subtitle {
-        font-size: 0.75rem;
-    }
-    
     section {
         padding: 1.5rem 1rem;
         border-radius: 8px;
